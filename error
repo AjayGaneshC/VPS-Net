@@ -1,0 +1,10 @@
+htic@htic-endo:~/Wade-Archives/VPS$ python3 vps-inference.py
+Traceback (most recent call last):
+  File "/home/htic/Wade-Archives/VPS/vps-inference.py", line 8, in <module>
+    from lib.module.PNSPlusNetwork import PNSNet  # Adjust import based on your project structure
+  File "/home/htic/Wade-Archives/VPS/lib/module/PNSPlusNetwork.py", line 9, in <module>
+    from lib.module.PNSPlusModule import NS_Block
+  File "/home/htic/Wade-Archives/VPS/lib/module/PNSPlusModule.py", line 10, in <module>
+    import self_cuda_backend as _ext
+ModuleNotFoundError: No module named 'self_cuda_backend'
+htic@htic-endo:~/Wade-Archives/VPS$ 
