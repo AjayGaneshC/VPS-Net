@@ -1,10 +1,28 @@
-htic@htic-endo:~/Wade-Archives/VPS$ python3 vps-inference.py
+python3 setup.py build_ext --inplace
+running build_ext
+/home/htic/.local/lib/python3.10/site-packages/torch/utils/cpp_extension.py:497: UserWarning: Attempted to use ninja as the BuildExtension backend but we could not find ninja.. Falling back to using the slow distutils backend.
+  warnings.warn(msg.format('we could not find ninja.'))
 Traceback (most recent call last):
-  File "/home/htic/Wade-Archives/VPS/vps-inference.py", line 8, in <module>
-    from lib.module.PNSPlusNetwork import PNSNet  # Adjust import based on your project structure
-  File "/home/htic/Wade-Archives/VPS/lib/module/PNSPlusNetwork.py", line 9, in <module>
-    from lib.module.PNSPlusModule import NS_Block
-  File "/home/htic/Wade-Archives/VPS/lib/module/PNSPlusModule.py", line 10, in <module>
-    import self_cuda_backend as _ext
-ModuleNotFoundError: No module named 'self_cuda_backend'
-htic@htic-endo:~/Wade-Archives/VPS$ 
+  File "/home/htic/Wade-Archives/VPS/lib/module/PNS/setup.py", line 17, in <module>
+    setup(
+  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 153, in setup
+    return distutils.core.setup(**attrs)
+  File "/usr/lib/python3.10/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/usr/lib/python3.10/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/usr/lib/python3.10/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/usr/lib/python3/dist-packages/setuptools/command/build_ext.py", line 79, in run
+    _build_ext.run(self)
+  File "/usr/lib/python3.10/distutils/command/build_ext.py", line 340, in run
+    self.build_extensions()
+  File "/home/htic/.local/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 520, in build_extensions
+    _check_cuda_version(compiler_name, compiler_version)
+  File "/home/htic/.local/lib/python3.10/site-packages/torch/utils/cpp_extension.py", line 415, in _check_cuda_version
+    raise RuntimeError(CUDA_MISMATCH_MESSAGE.format(cuda_str_version, torch.version.cuda))
+RuntimeError: 
+The detected CUDA version (11.5) mismatches the version that was used to compile
+PyTorch (12.4). Please make sure to use the same CUDA versions.
+
+htic@htic-endo:~/Wade-Archives/VPS/lib/module/PNS$ 
